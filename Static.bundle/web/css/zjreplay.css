@@ -1,0 +1,328 @@
+.start-btn{
+    background-color: aliceblue;
+    color: #222;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    font-size: 0.5rem;
+    width: 5rem;
+    border-radius: 2rem;
+    font-weight: bold;
+    border: none;
+    outline: none;
+}
+.start-btn:active{
+    background-color: antiquewhite;
+}
+.video-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 9999;
+    padding: 16px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.margin-em{
+    margin: 0 0.5em;
+}
+.video-box-top{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+}
+.video-radius{
+    height: 0.5rem;
+    line-height: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 0 0.2rem;
+    background-color: #666;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+.radio-img{
+    width: 0.45rem;
+    height: auto;
+    margin: 0 3px;
+}
+.video-index{
+    width: 100%;
+    height: auto;
+}
+.card-download, .card-download1{
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.4rem;
+    /* height: 2rem; */
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.45rem 0.2rem;
+}
+.card-download1{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    /* background-color: transparent; */
+    background-color: rgba(255, 255, 255, 0.9);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    height: 4rem;
+    margin: auto;
+    /* background-color: #222; */
+}
+.card-download-logo{
+    border-radius: 0.2rem;
+    width: 1rem;
+}
+.card-download-info{
+    flex: 1;
+    padding: 0 0.2rem;
+    text-align: left;
+    color: #222;
+}
+.card-download-title{
+    font-weight: bold;
+}
+.card-download-btn{
+    background-color: #f1561d;
+    border-radius: 0.2rem;
+    padding: .25rem .6rem;
+}
+.card-download1 .card-download-info{
+    text-align: center;
+    /* color: #eee; */
+    margin: 0.4rem 0;
+
+}
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+}
+.popup-mark{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background: rgba(0,0,0,0.6);
+}
+.popup-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
+    width: 61.8%;
+    height: 200px;
+    margin: auto;
+    background: white;
+    color: #222;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.popup-content-body{
+    text-align: center;
+    border-bottom: 1px solid #666;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.popup-content-footer{
+    display: flex;
+    text-align: center;
+
+}
+.popup-content-footer-btn{
+    flex: 1;
+    height: 50px;
+    line-height: 50px;
+}
+.popup-content-footer-btn:first-child{
+    border-right: 1px solid #666;
+}
+
+.lucky-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    z-index: 9999;
+}
+.lucky-box-musk{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+    background-color: rgba(0,0,0,0.6);
+}
+.lucky-box-content{
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    right: 0;
+    /* bottom: 0; */
+    z-index: 20;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-60%);
+    width: 8.5rem;
+    height: auto;
+}
+.lucky-box-content .b-img{
+    width: 100%;
+    height: auto;
+}
+.lucky-box-content .btn{
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    margin-top: 1rem;
+}
+.lucky-box-content .btn-img{
+    width: 6.5rem;
+    height: auto;
+}
+.lucky-box-content .close-img{
+    width: 0.8rem;
+    height: auto;
+    margin-top: 0.5rem;
+}
+.lucky-box-content .btn-text{
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    color: #854600;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 0.5rem;
+    font-size: 0.5rem;
+    line-height: 0.5rem;
+}
+.lucky-box-content-body{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 4.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lucky-box .top-text{
+    text-align: center;
+    font-size: 0.4rem;
+}
+.lucky-box .center-text{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 2.5rem;
+    font-weight: bold;
+    margin-top: .8rem;
+}
+.lucky-box .center-text .text1 {
+    font-size: 0.4rem;
+}
+.lucky-box .center-text .text2 {
+    font-size: 2.8rem;
+    line-height: 2.5rem;
+}
+.lucky-box .center-text .text3 {
+    height: 100%;
+}
+.lucky-box .bottom-text{
+    margin-top: 1.3rem;
+    font-size: 0.4rem;
+    padding-left: 1.2rem;
+}
+
+@font-face{font-family: 'numjump';src : url('source/num.ttf');}
+        html, body{
+            height: 100%;
+            overflow: hidden;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            /* user-select: none; */
+        }
+        #info {
+				position: absolute;
+				top: 10px;
+				width: 100%;
+				color: #ffffff;
+				padding: 6px;
+				font-size:13px;
+				text-align:center;
+                font-family:Microsoft YaHei
+			}
+        #canvas-frame {
+            /* border: none; */
+            /* cursor: pointer; */
+            width: 100%;
+            height: 100%;
+            /* -webkit-touch-callout:none;
+            -webkit-user-select:none;
+            -moz-user-select:none;
+            -ms-user-select:none;
+            user-select:none;  */
+        }
+        #point {
+            position :absolute;
+            left :120px;
+            top :80px;
+            color: aliceblue;
+            font-size: 1rem;
+            font-family: numjump;
+            user-select:none;
+        }
+        #gameBegin {
+            position :absolute;
+            top :0px;
+            width: 100%;
+            height: 100%;
+            background-color:rgba(0,0,0,0.4);
+            z-index: 9;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items:center;
+            }
+        #gameOver {
+            position :absolute;
+            left :0px;
+            top :0px;
+            width: 100%;
+            height: 100%;
+            background-color:rgba(0,0,0,0.6);
+            display:none;
+            z-index: 9;
+            color: white;
+            text-align: center;
+            }
