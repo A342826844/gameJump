@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "gameJump",
-    "slug": "gameJump",
+    "name": "JumpJump",
+    "slug": "JumpJump",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -31,6 +29,18 @@
       "eas": {
         "projectId": "1e91b28a-313b-4b51-b753-1454c673947d"
       }
-    }
+    },
+    "plugins": [
+      "react-native-fbsdk-next",
+      {
+        "appID": "970594464744729",
+        "clientToken": "90135385d9cf766cb8dc4ea6e8f114a3",
+        "displayName": "JumpJump",
+        "scheme": "fb970594464744729",
+        "advertiserIDCollectionEnabled": true,
+        "autoLogAppEventsEnabled": true,
+        "isAutoInitEnabled": true
+      }
+    ]
   }
 }
