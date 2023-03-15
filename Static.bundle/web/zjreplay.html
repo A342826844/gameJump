@@ -14,10 +14,10 @@
 <script src="js/Stats.js"></script>
 <script src="js/tween.min.js"></script>
 <script src="js/play/createBox.js"></script>
+<script src="js/play/showVideo.js"></script>
 
 <script src="js/config.js"></script>
 <script src="js/flexible.js"></script>
-<script src="js/showVideo.js"></script>
 <!-- <script src="jquery/jquery-3.3.1.js"></script> -->
 <!-- <script src="js/controls/OrbitControls.js"></script> -->
 
@@ -943,33 +943,42 @@
 <!-- <div style="color: red; position: fixed;z-index: 99999;top: 20%;left: 50%;font-size: 50px;">2121212121</div> -->
 <div id="point"> 0 </div>
 <div id="gameOver" >
-    <p id="normal_score"  style="font-size:0.5rem; margin-top:100px;font-weight: 200; ">本次得分</p>
-    <p id="new_score" style="font-size:0.5rem; margin-top:100px;font-weight: 200;display: none; ">= <span style="color: #f53c00">新纪录</span> =</p>
+    <!-- 本次得分: pontuação desta vez -->
+    <p id="normal_score"  style="font-size:0.5rem; margin-top:100px;font-weight: 200; ">pontuação desta vez</p>
+    <!-- 新纪录: novo recorde -->
+    <p id="new_score" style="font-size:0.5rem; margin-top:100px;font-weight: 200;display: none; ">= <span style="color: #f53c00">novo recorde</span> =</p>
     <p style="font-size:1rem; margin-top:20px; font-family: numjump;" id= "pointtotal" >0</p>
+    <!-- 看广告复活: assista anúncio para reviver -->
     <button style="margin-top: 75%;" class="start-btn" onclick="playHandle();">
-        看广告复活
+        Veja o anúncio reviver
     </button>
     <button style="margin-top: 60px;" class="start-btn" onclick="replay();">
-        再玩一局
+        <!-- 再玩一局: jogar novamente -->
+        jogar novamente
     </button>
-    <p style="font-size:0.4rem; margin-top:100px;font-weight: 200; ">历史最高得分: <span id="history_highest">0</span></p>
+    <!-- 历史最高得分: pontuação mais alta da história -->
+    <p style="font-size:0.4rem; margin-top:100px;font-weight: 200; ">pontuação mais alta da história: <span id="history_highest">0</span></p>
 
     <!-- <img style="margin-top:80px;width:160px;height:60px;" src="source/bottom.png"  onclick="replay();"> -->
 </div>
 <div class="video-box" id="video_box" style="display: none;">
     <div class="video-box-top">
         <div class="top-left video-radius">
-            <span class="margin-em">广告</span>
+            <!-- 广告: anúncio/publicidade -->
+            <span class="margin-em">pub</span>
             <span style="margin-bottom: 3px;">|</span>
             <span class="margin-em" id="ad_tips1">
-                <span id="countdown">25</span>s 可获得奖励</span>
-            <span style="display: none;" class="margin-em" id="ad_tips2">已获得奖励</span>
+                <span id="countdown">25</span>s recompensa disponível</span>
+                <!-- 可获得奖励: recompensa disponível -->
+                <!-- 已获得奖励: recompensa obtida -->
+            <span style="display: none;" class="margin-em" id="ad_tips2">recompensa obtida</span>
         </div>
         <div class="top-right video-radius">
             <img class="radio-img" id="muted" src="./source/muted.png" alt="" srcset="">
             <img  style="display: none;"  class="radio-img" id="notice" src="./source/notice.png" alt="" srcset="">
             <span style="margin-bottom: 3px;">|</span>
-            <span id='close_btn' class="margin-em">关闭</span>
+            <!-- 关闭: fechar -->
+            <span id='close_btn' class="margin-em">fechar</span>
         </div>
     </div>
     <div class="video-center" onclick="gotoOutLink()">
@@ -979,33 +988,39 @@
         <img class="card-download-logo" src="./source/24trade-logo1.png" alt="">
         <div class="card-download-info">
             <div class="card-download-title">24trade pro</div>
-            <div>快去下载送钱了</div>
+            <!-- 快去下载送钱了: baixe agora e ganhe dinheiro -->
+            <div>baixe agora e ganhe dinheiro</div>
         </div>
         <div onclick="gotoOutLink()" class="card-download-btn">
-            理解下载
+            <!-- 立即下载: baixar agora -->
+            baixar agora
         </div>
     </div>
     <div class="card-download1" id="card_download1">
         <img class="card-download-logo" src="./source/24trade-logo1.png" alt="">
         <div class="card-download-info">
             <div class="card-download-title">24trade pro</div>
-            <div>快去下载送钱了</div>
+            <div>baixe agora e ganhe dinheiro</div>
         </div>
         <div onclick="gotoOutLink()" class="card-download-btn">
-            理解下载
+            baixar agora
         </div>
     </div>
 </div>
 <div class="popup" id="popup_box" style="display: none;">
     <div class="popup-mark"></div>
+    <!-- 暂未获得奖励: recompensa ainda não obtida
+是否继续观看视频: continuar assistindo o vídeo?
+放弃: desistir
+继续: continuar -->
     <div class="popup-content">
         <div class="popup-content-body">
-            <p>暂未获得奖励</p>
-            <p>是否继续观看视频</p>
+            <p>recompensa ainda não obtida</p>
+            <p>continuar assistindo o vídeo?</p>
         </div>
         <div class="popup-content-footer">
-            <div id="give_up" class="popup-content-footer-btn">放弃</div>
-            <div id="continue" class="popup-content-footer-btn">继续</div>
+            <div id="give_up" class="popup-content-footer-btn">desistir</div>
+            <div id="continue" class="popup-content-footer-btn">continuar</div>
         </div>
     </div>
 </div>
