@@ -31,16 +31,18 @@
       }
     },
     "plugins": [
-      "react-native-fbsdk-next",
-      {
-        "appID": "970594464744729",
-        "clientToken": "90135385d9cf766cb8dc4ea6e8f114a3",
-        "displayName": "JumpJump",
-        "scheme": "fb970594464744729",
-        "advertiserIDCollectionEnabled": true,
-        "autoLogAppEventsEnabled": true,
-        "isAutoInitEnabled": true
-      }
+      [
+        "react-native-fbsdk-next",
+        {
+          "appID": "950610639454869",
+          "clientToken": "90135385d9cf766cb8dc4ea6e8f114a3",
+          "displayName": "JumpJump",
+          "scheme": "fb950610639454869",
+          "advertiserIDCollectionEnabled": true,
+          "autoLogAppEventsEnabled": true,
+          "isAutoInitEnabled": true
+        }
+      ]
     ]
   }
 }
