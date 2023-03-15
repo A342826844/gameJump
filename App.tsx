@@ -16,8 +16,8 @@ export default function App() {
         originWhitelist={["*"]} // 需要修改白名单
         allowingReadAccessToURL="*"
         source={{
-          uri: `http://192.168.110.211:5500/Static.bundle/web/zjreplay.html?t=${Date.now()}`,
-          // uri: "https://24game.ofbt.xyz/index.html",
+          // uri: `http://192.168.110.211:5500/Static.bundle/web/zjreplay.html?t=${Date.now()}`,
+          uri: "https://24game.ofbt.xyz/index.html",
         }}
         style={{ width, height }}
         // incognito={true}
