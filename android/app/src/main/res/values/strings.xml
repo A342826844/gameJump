@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">gameJump</string>
+  <string name="app_name">JumpJump</string>
+  <string name="expo_splash_screen_resize_mode" translatable="false">contain</string>
+  <string name="expo_splash_screen_status_bar_translucent" translatable="false">false</string>
+  <string name="facebook_app_id">950610639454869</string>
+  <string name="facebook_client_token">90135385d9cf766cb8dc4ea6e8f114a3</string>
+  <string name="fb_login_protocol_scheme">fb950610639454869</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.gamejump;
+package com.trade24.gamejump;
 
 import android.os.Build;
 import android.os.Bundle;
