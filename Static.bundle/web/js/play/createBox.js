@@ -516,6 +516,7 @@ function creatcube07(x,z) {
     group = new THREE.Object3D();
     group.add(mesh,mesh1,Shadow);
     scene.add(group);
+    group.luckyType = LUCKY_TYPE.RECORD
     return group;
 }
 

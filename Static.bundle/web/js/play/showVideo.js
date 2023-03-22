@@ -3,7 +3,6 @@ function VideoModel(option) {
         src: './source/video1.mp4',
         countdown: 15,
         adTtile: '24Trade Pro',
-        adTips: '快去下载送钱了',
         muted: true,
     }
     this.init = function() {
@@ -11,6 +10,7 @@ function VideoModel(option) {
         this.countdown = this.option.countdown;
         this.muted = false;
         this.timer = null;
+        this.fristClose = false;
         // this.currentTime = 0;
         this.boxEl = document.getElementById('video_box');
         this.countdownEl = document.getElementById('countdown');
@@ -55,8 +55,12 @@ function VideoModel(option) {
         if (this.countdown <= 0) {
             this.closeHandle();
             revive()
+        } else if (!this.fristClose) {
+            this.fristClose = true;
+            gotoOutLink()
         } else {
             document.getElementById('popup_box').style.display = 'block';
+
         }
     }
 

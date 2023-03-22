@@ -2,7 +2,7 @@
 <html lang="en">
     
 <head >
-    <title>FLIP</title>
+    <title>Jump Jump</title>
     <meta charset="utf-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <link rel="stylesheet" href="css/zjreplay.css">
@@ -692,11 +692,17 @@
         }
     }
 
+    var createCount = 0;
     function createBox() {  
+        createCount += 1;
         var boxCount = 28;
         var boxNum = Math.floor(Math.random()*boxCount); //0~boxCount-1
         direction = Math.floor(Math.random()*2); //0~boxCount-1
         buildDistance = 100+(1+Math.floor(Math.random()*7))*20; //140~380
+        // 第五个生成红包 后面没过是个固定生成
+        if ((createCount + 5 ) % 10 ===0) {
+            boxNum = 18; // 生成红包盒子
+        }
         if (direction == 1){
             switch(boxNum)
             {
@@ -856,10 +862,17 @@
         } else if (mainmesh5.luckyType === LUCKY_TYPE.RECORD) {
             // showLuckPopup();
             var audioEl = document.getElementById('audio');
+            var srcs = ['./source/make-it-happen.mp3', './source/meeting-point.mp3', './source/in-your-hands.mp3', './source/spiritual.mp3']
+            audioEl.src = srcs[Math.floor(Math.random() * srcs.length)];
             audioEl.volumevalue = 0.3;
             audioEl.play();
 
             // TODO:小彩蛋
+        } else {
+            var audioEl = document.getElementById('audio');
+            audioEl.src = './source/jump.mp3';
+            audioEl.volumevalue = 0.3;
+            audioEl.play();
         }
     }
 
@@ -885,7 +898,7 @@
     }
 
     function replay() {
-        location.reload(); 
+        location.reload();
     }
 
     function revive() {
@@ -916,7 +929,10 @@
     var videoModel;
 
     function playHandle() {
-        var videoModel = new VideoModel();
+        var srcs = ['./source/video1.mp4', './source/video2.mp4']
+        var videoModel = new VideoModel({ 
+            src: srcs[Math.floor(Math.random() * srcs.length)],
+        });
         videoModel.playStart()
         // revive()
     }
@@ -928,10 +944,6 @@
 
     function hideLockPopup() {
         document.getElementById('locky_box').style.display = 'none';
-    }
-
-    function gotoOutLink() {
-        window.open('https://play.google.com/store/apps/details?id=com.roblox.client&hl=zh&gl=US')
     }
 
 
@@ -947,7 +959,7 @@
     <p id="normal_score"  style="font-size:0.5rem; margin-top:100px;font-weight: 200; ">pontuação desta vez</p>
     <!-- 新纪录: novo recorde -->
     <p id="new_score" style="font-size:0.5rem; margin-top:100px;font-weight: 200;display: none; ">= <span style="color: #f53c00">novo recorde</span> =</p>
-    <p style="font-size:1rem; margin-top:20px; font-family: numjump;" id= "pointtotal" >0</p>
+    <p style="font-size:2rem; font-weight: bold; margin-top:20px; font-family: numjump;" id= "pointtotal" >0</p>
     <!-- 看广告复活: assista anúncio para reviver -->
     <button style="margin-top: 75%;" class="start-btn" onclick="playHandle();">
         Veja o anúncio reviver
@@ -987,9 +999,9 @@
     <div class="card-download" id="card_download">
         <img class="card-download-logo" src="./source/24trade-logo1.png" alt="">
         <div class="card-download-info">
-            <div class="card-download-title">24trade pro</div>
-            <!-- 快去下载送钱了: baixe agora e ganhe dinheiro -->
-            <div>baixe agora e ganhe dinheiro</div>
+            <div class="card-download-title">24pro Trade</div>
+            <!-- 投资不需要大量资金。: Investir não requer uma grande quantidade de capital. -->
+            <div>Investir não requer uma grande quantidade de capital.</div>
         </div>
         <div onclick="gotoOutLink()" class="card-download-btn">
             <!-- 立即下载: baixar agora -->
@@ -999,8 +1011,8 @@
     <div class="card-download1" id="card_download1">
         <img class="card-download-logo" src="./source/24trade-logo1.png" alt="">
         <div class="card-download-info">
-            <div class="card-download-title">24trade pro</div>
-            <div>baixe agora e ganhe dinheiro</div>
+            <div class="card-download-title">24pro Trade</div>
+            <div>Investir não requer uma grande quantidade de capital.</div>
         </div>
         <div onclick="gotoOutLink()" class="card-download-btn">
             baixar agora
