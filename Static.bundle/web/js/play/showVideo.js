@@ -1,3 +1,8 @@
+var VIDEO_TYPE = {
+    REVIVE: 0, // 复活
+    GET_PLAY: 1, // 重置玩游戏机会
+}
+
 function VideoModel(option) {
     var defaultOptions = {
         src: './source/video1.mp4',
@@ -7,7 +12,7 @@ function VideoModel(option) {
     }
     this.init = function() {
         this.option = option || defaultOptions;
-        this.countdown = this.option.countdown;
+        this.countdown = this.option.countdown || 15;
         this.muted = false;
         this.timer = null;
         this.fristClose = false;
@@ -54,7 +59,13 @@ function VideoModel(option) {
         this.clearHandle();
         if (this.countdown <= 0) {
             this.closeHandle();
-            revive()
+            if (this.type === VIDEO_TYPE.REVIVE) {
+                revive() // 复活
+            } else if (this.type === VIDEO_TYPE.GET_PLAY) {
+                replayCount() // 重新玩
+            } else {
+                revive() // 复活
+            }
         } else if (!this.fristClose) {
             this.fristClose = true;
             gotoOutLink()
@@ -69,7 +80,8 @@ function VideoModel(option) {
     //     this.video_idEl.currentTime = this.currentTime;
     // }
 
-    this.playStart = function() {
+    this.playStart = function(type) {
+        this.type = type || VIDEO_TYPE.REVIVE; // 如果TYPE===1
         this.boxEl.style.display = 'flex';
 
         this.ad_tips1El.style.display = 'inline';

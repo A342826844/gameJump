@@ -817,6 +817,7 @@
     }
 
     function saveHistory() {
+        updatePlayCountHandle()
         var historyHighest = getHistoryHighest();
         if (point > historyHighest) {
             setHistoryHighest(point);
@@ -826,6 +827,32 @@
         }
         document.getElementById("history_highest").innerHTML = historyHighest || 0;
 
+
+    }
+
+    /* 
+        1.每天三次机会, UTC+0点重置
+        2.第四次的时候跳出视频广告
+        3.如果退出广告，什么都不做
+        4.如果看完广告，机会进行重置
+    */
+
+    function updatePlayCountHandle() {
+        var playCount = getReplayCount();
+        document.getElementById("play_count_in_current_round").innerHTML = playCount + 1 || 1;
+        setReplayCount(playCount + 1)
+
+    }
+
+
+
+    function playCountHandle() {
+        var playCount = getReplayCount();
+        if (playCount >= 2) {
+            playHandle(VIDEO_TYPE.GET_PLAY)
+            return false
+        }
+        return true
     }
 
     function pointCount() {
@@ -898,7 +925,15 @@
     }
 
     function replay() {
+        if (playCountHandle()) {
+            location.reload();
+        }
+    }
+
+    function replayCount() {
         location.reload();
+        setReplayCount(0)
+
     }
 
     function revive() {
@@ -928,12 +963,12 @@
 
     var videoModel;
 
-    function playHandle() {
+    function playHandle(type) {
         var srcs = ['./source/video1.mp4', './source/video2.mp4']
         var videoModel = new VideoModel({ 
             src: srcs[Math.floor(Math.random() * srcs.length)],
         });
-        videoModel.playStart()
+        videoModel.playStart(type)
         // revive()
     }
 
@@ -966,7 +1001,7 @@
     </button>
     <button style="margin-top: 60px;" class="start-btn" onclick="replay();">
         <!-- 再玩一局: jogar novamente -->
-        jogar novamente
+        jogar novamente (<span id="play_count_in_current_round">0</span>/3)
     </button>
     <!-- 历史最高得分: pontuação mais alta da história -->
     <p style="font-size:0.4rem; margin-top:100px;font-weight: 200; ">pontuação mais alta da história: <span id="history_highest">0</span></p>
